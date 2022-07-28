@@ -5,7 +5,9 @@ import "./index.css";
 const Tools = () => {
 
   const [btn,setBtn] = useState(data)
-
+const handleClear = ()=>{
+  setBtn([])
+}
   const handleDel =(id)=>{
     setBtn((del) => {
       let delet = del.filter((check) => check.id !== id);
@@ -31,7 +33,7 @@ const Tools = () => {
             );
           })}
           <div className="clear">
-            <h4>Clear</h4>
+            <h4 onClick = {handleClear}>Clear</h4>
           </div>
         </div>
       </div>
