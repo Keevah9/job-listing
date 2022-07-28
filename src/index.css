@@ -1,13 +1,185 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;500;700&family=Lato:wght@100;300;400&family=League+Spartan:wght@500;700&family=Manrope:wght@200;300;400;500;800&family=Outfit:wght@400;700&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,400;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;1,100;1,300;1,400&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+:root{
+  --bg-color: hsl(180, 52%, 96%);
+  --color-accent: hsl(180, 30%, 45%);
+  --color-span:hsl(180, 8%, 52%);
+  --color-pri:hsl(180, 14%, 20%);
+  --color-head: black;
+  --bg-main: hsl(0, 0%, 100%);
+  --bg-button: hsl(180, 34%, 67%);
+--bg-head: hsl(180, 44%, 94%);
+  --fs-200: .8rem;
+  --fs-300: 1rem;
+  --fs-350: 1.2rem;
+  --fs-400:1.5rem;
+  --fs-450:2rem;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: 'League Spartan';
+}
+html{
+  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.head{
+width: 100%;
+height: 12vh;
+background: url('../public/images/bg-header-mobile.svg') ;
+background-repeat: no-repeat;
+background-size: cover;
+margin-top: -2rem;
+}
+
+.mainContainer{
+  margin: 2rem auto;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 0 1.2rem;
+}
+.main, .button{
+  background-color: var(--bg-main);
+  min-height: 5rem;
+  max-width: 35rem;
+  margin: 0 auto;
+  margin-top: 2.3rem;
+  padding: 1rem 1.3rem;
+  box-shadow: 0px 12px 10px hsl(180, 27%, 88%);
+}
+img{
+  max-width: 5rem;
+  max-height: 5rem;
+  margin-top: -2.5rem;
+}
+.brandCon{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+margin-top: .5rem;
+}
+.brand{
+  color: var(--color-accent);
+  font-size: var(--fs-400);
+  padding-right: .8rem;
+}
+.featuredBtn{
+  color: var(--bg-main);
+  padding: .8rem 1.2rem;
+  font-weight: 700;
+  background-color: black;
+  border-radius: 20px;
+  border: none;
+}
+.featuredBtn1{
+  background-color: var(--color-accent);
+  
+}
+.position{
+  font-size: var(--fs-400);
+  padding: 1rem 0;
+}
+
+.listDetails li{
+  font-size: var(--fs-350);
+  color: var(--color-span);
+}
+.listDetails .first{
+list-style:none;
+}
+.listDetails {
+  display: flex;
+  gap: 20px;
+  list-style: disc;
+  padding: .3rem 0 1rem 0;
+}
+.line{
+  width: 100%;
+  height: 3%;
+  border-bottom: 1px solid var(--color-span);
+}
+.toolCon{
+  display: flex;
+  flex-wrap: wrap;
+padding-top: .5rem;
+}
+.toolCon h4, .xBtn{
+border: 1px solid transparent;
+border-radius: 5px;
+padding: .6rem 1rem;
+background-color: var(--bg-head);
+margin-right: .6rem;
+margin-top: .6rem;
+color: var(--color-accent);
+font-weight: 700;
+font-size: var(--fs-350);
+max-height: 3vh;
+}
+.button{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons{
+  padding-top: 3rem;
+}
+.xBtns{
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding:0 .5rem;
+background-color: var(--bg-head);
+color: var(--color-accent);
+font-weight: 700;
+font-size: var(--fs-350);
+}
+.xBtn{
+  background-color: var(--color-accent);
+  color: white;
+  margin-top: -.1rem;
+  margin-right:  -1rem;
+  font-weight: 700;
+  border-radius: 0%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.clear{
+  font-size: var(--fs-400);
+  color: var(--color-span);
+  padding:  1.2rem 1rem 0 1rem;
+}
+@media screen  and (min-width:620px){
+  .header{
+    background: url('../public/images/bg-header-desktop.svg');
+  }
+  .main, .button{
+    display: flex;
+    flex-direction: row;
+    max-width: 70rem;
+    justify-content: space-between;
+  }
+  .line{
+    display: none;
+  }
+  img{
+    margin: 0;
+  }
+  .imgContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 }

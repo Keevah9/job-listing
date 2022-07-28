@@ -1,24 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import React, {useState} from "react";
+import { data } from "./data";
+import Tools from "./Tool";
 
-function App() {
+
+function App({btn}) {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Tools btn = {btn}/>
+      <main>
+        {data.map((person) => {
+          const {
+            tools,
+            languages,
+            location,
+            contract,
+            postedAt,
+            level,
+            role,
+            position,
+            featured,
+            current,
+            logo,
+            company,
+            id,
+          } = person;
+          
+          return (
+            <section className="main" key={id}>
+              <div className="imgContainer">
+                <div className="imgCon">
+                  <img src={logo} alt={company} />
+                </div>
+                <div>
+                  <div className="brandCon">
+                    <h3 className="brand">{company}</h3>
+                    
+                    
+                       
+                      <button className="featuredBtn1 featuredBtn">
+                        {current == true} New!
+                      </button>
+                                    <button className="featuredBtn">{featured} Featured </button>
+                  </div>
+                  <h3 className="position">{position}</h3>
+                  <div className="details">
+                    <ul className="listDetails">
+                      <li className="first">{postedAt}</li>
+                      <li>{contract}</li>
+                      <li>{location}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="line"></div>
+              <div className="toolCon">
+                <h4>{tools}</h4>
+                <h4>{languages}</h4>
+                <h4>{level}</h4>
+                <h4>{role}</h4>
+              </div>
+            </section>
+          );
+        })}
+      </main>
+    </>
   );
 }
 
