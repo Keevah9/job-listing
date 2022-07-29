@@ -47,13 +47,19 @@ margin-top: -2rem;
   min-height: 100vh;
   padding: 0 1.2rem;
 }
+.main:nth-child(1),
+.main:nth-child(2) {
+  border-left: 5px solid var(--color-accent);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 .main, .button{
   background-color: var(--bg-main);
-  min-height: 5rem;
-  max-width: 35rem;
+  min-height: 7rem;
+  max-width: 33rem;
   margin: 0 auto;
-  margin-top: 2.3rem;
-  padding: 1rem 1.3rem;
+  margin-top: 3rem;
+  padding: 1rem 1.4rem;
   box-shadow: 0px 12px 10px hsl(180, 27%, 88%);
 }
 img{
@@ -63,7 +69,7 @@ img{
 }
 .brandCon{
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 margin-top: .5rem;
 }
@@ -74,11 +80,12 @@ margin-top: .5rem;
 }
 .featuredBtn{
   color: var(--bg-main);
-  padding: .8rem 1.2rem;
+  padding: .6rem 1rem;
   font-weight: 700;
   background-color: black;
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
+  font-size: var(--fs-350);
 }
 .featuredBtn1{
   background-color: var(--color-accent);
@@ -107,12 +114,13 @@ list-style:none;
   height: 3%;
   border-bottom: 1px solid var(--color-span);
 }
-.toolCon{
+.toolCon, .xBtn{
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-padding-top: .5rem;
+padding-top: .3rem;
 }
-.toolCon h4, .xBtn{
+.toolCon h4, .xBtn h4{
 border: 1px solid transparent;
 border-radius: 5px;
 padding: .6rem 1rem;
@@ -128,31 +136,31 @@ max-height: 3vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 1rem 1.3rem 1.5rem;
+margin-bottom: 3.5rem;
 }
 .buttons{
   padding-top: 3rem;
 }
-.xBtns{
+.space{
+  margin-right: 2rem;
+  margin-bottom: .7rem;
   display: flex;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding:0 .5rem;
-background-color: var(--bg-head);
-color: var(--color-accent);
-font-weight: 700;
-font-size: var(--fs-350);
+  gap: 20px;
+  background-color: var(--bg-head);
 }
 .xBtn{
   background-color: var(--color-accent);
   color: white;
   margin-top: -.1rem;
   margin-right:  -1rem;
+  padding: .7rem .5rem;
   font-weight: 700;
   border-radius: 0%;
+  border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -160,8 +168,9 @@ font-size: var(--fs-350);
   font-size: var(--fs-400);
   color: var(--color-span);
   padding:  1.2rem 1rem 0 1rem;
+  cursor: pointer;
 }
-@media screen  and (min-width:620px){
+@media screen  and (min-width:660px){
   .header{
     background: url('../public/images/bg-header-desktop.svg');
   }
@@ -170,6 +179,9 @@ font-size: var(--fs-350);
     flex-direction: row;
     max-width: 70rem;
     justify-content: space-between;
+  }
+  .main{
+    margin-top: 1.2rem;
   }
   .line{
     display: none;

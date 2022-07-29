@@ -9,7 +9,6 @@ root.render(
   <React.StrictMode>
     <header className='head'>
       <div className="mainContainer">
-        {/* <Selections /> */}
         <App/>
       </div>
     </header>
